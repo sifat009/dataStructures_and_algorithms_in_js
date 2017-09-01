@@ -1,1 +1,1 @@
-Just implementing some basic dataStructures and algorithms in javaScript
+Just implementing some basic dataStructures and algorithms using javaScript
