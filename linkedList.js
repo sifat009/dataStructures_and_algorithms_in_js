@@ -158,6 +158,17 @@ function linkedList() {
 		}
 	}
 
+	// remove duplicate values
+	this.removeDuplicates = function() {
+		let current = head;
+		while( current ) {
+			if( current.next && current.value == current.next.value ) {
+				current.next = current.next.next;
+			} else {
+				current = current.next;
+			}
+		}
+	}
 	// printing the values of the linked list
 
 	this.show = function() {
@@ -176,21 +187,25 @@ function linkedList() {
 }
 
 let list = new linkedList();
-list.append(5);
-list.append(10);
-list.append(15);
-list.prepend(20);
-list.prepend(25);
-
+list.append(1);
+list.append(1);
+list.append(1);
+list.append(1);
+list.append(1);
+list.append(2);
+list.append(2);
+list.append(3);
+list.append(3);
+list.removeDuplicates();
 console.log(list.show());
-console.log("length: ",list.length());
-console.log("Last element: ",list.removeLast());
-console.log("First element: ",list.removeFirst());
-console.log(list.show());
-console.log("length: ",list.length());
-list.addAt(10, 1);
-console.log(list.show());
-console.log("Index is : ",list.indexOf(15));
-console.log("Removed element: ",list.removeAt(2));
-console.log(list.show());
+// console.log("length: ",list.length());
+// console.log("Last element: ",list.removeLast());
+// console.log("First element: ",list.removeFirst());
+// console.log(list.show());
+// console.log("length: ",list.length());
+// list.addAt(10, 1);
+// console.log(list.show());
+// console.log("Index is : ",list.indexOf(15));
+// console.log("Removed element: ",list.removeAt(2));
+// console.log(list.show());
 
